@@ -1,23 +1,110 @@
-<!doctype html>
-<html>
-	<head>
-		<title>perak</title>
-	</head>
-	<body>
-		<h1>This page is under construction</h1>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Instant Video Call</title>
+        <meta name="description" content="Web based instant video chat. No instalation, no plugins, just click to talk!">
+        <meta name="viewport" content="width=device-width">
 
-		<script type="text/javascript">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
 
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-44853853-1']);
-		  _gaq.push(['_trackPageview']);
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
+	<div id="wrap">
+		<div class="container">
+			<div class="header">
+				<ul class="nav nav-pills pull-right">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="video.html">Wait for the call</a></li>
+					<li id="callLink"><a data-toggle="modal" href="#callDialog">Call a friend</a></li>
+				</ul>
+				<h3 class="text-muted">Instant video call</h3>
+			</div>
 
-		</script>
-	</body>
+			<div class="modal fade" id="callDialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Call a friend</h4>
+						</div>
+						<div class="modal-body">
+                            <div id="friendChannelError" style="display: none;" class="alert alert-danger"></div>
+							<h4>Friend's channel:</h4>
+							<input type="text" id="friendChannel" class="form-control">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" id="callButton" class="btn btn-primary">Call</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+			<div class="jumbotron">
+				<h1>Instant video call</h1>
+				<p class="lead">No registration, no instalation, no plugins... just click to talk!</p>
+				<div class="btn-group"><a class="btn btn-lg btn-success" href="video.html">Wait for the call</a></div> &nbsp; or &nbsp; <div class="btn-group"><a class="btn btn-lg btn-success" data-toggle="modal" href="#callDialog">Call a friend</a></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="container">
+		<p class="text-muted credit">Copyright Petar Korponaić &copy; 2013</a>.</p>
+		</div>
+	</div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+
+        <script src="js/main.js"></script>
+
+<script type="text/javascript">
+    $('#callDialog').on('shown.bs.modal', function () {
+        $('#friendChannel').focus();
+    })
+
+    $("#callButton").click(function() {
+        var friend_channel = $("#friendChannel").val();
+
+        if(friend_channel == "" || friend_channel.length != 9 || !friend_channel.match(/^[0-9]+$/))
+        {
+            $("#friendChannelError").text("You have entered an invalid channel number.");
+            $("#friendChannelError").show();
+            return;
+        }
+
+        $('#callDialog').modal('hide');
+        window.location = "video.html?channel=" + friend_channel;
+    });
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44853853-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    </body>
 </html>
