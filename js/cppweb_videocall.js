@@ -32,6 +32,7 @@ VideoCall = function(options)
 
     var localPeerConnection = null;
     var offerReceived = false;
+    var answerReceived = false;
     var messageQueue = [];
 
 
@@ -66,6 +67,7 @@ VideoCall = function(options)
         me.isMaster = true;
         me.isActive = true;
         offerReceived = false;
+        answerReceived = false;
         messageQueue = [];
 
         createPeerConnection();
@@ -76,6 +78,7 @@ VideoCall = function(options)
         me.isMaster = false;
         me.isActive = true;
         offerReceived = false;
+        answerReceived = false;
         messageQueue = [];
 
         createPeerConnection();
@@ -107,11 +110,19 @@ VideoCall = function(options)
         }
 
         if(msg.type === "answer")
+        {
             setRemoteDescription(msg);
+
+            answerReceived = true;
+            // process queue
+            while(messageQueue.length > 0) {
+                me.processSignalingMessage(messageQueue.shift());
+            }
+        }
 
         if(msg.type === "candidate")
         {
-            if(offerReceived)
+            if(offerReceived || answerReceived)
             {
                 var candidate = new RTCIceCandidate({sdpMLineIndex: msg.label, candidate: msg.candidate});
                 localPeerConnection.addIceCandidate(candidate);
@@ -228,6 +239,7 @@ console.log("onCreateAnswerError");
         }
 
         offerReceived = false;
+        answerReceived = false;
     }
 
 /////////////////

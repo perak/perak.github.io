@@ -34,7 +34,7 @@ function addValueToURL(url, name, value)
 	if(typeof(name) != "undefined" && name && name != "")
 	{
 		if(typeof(value) != "undefined" && value)
-			url = url + (url.indexOf("?") != -1 ? "&" : "?") + name + "=" + value;
+			url = url + (url.indexOf("?") != -1 ? "&" : "?") + encodeURIComponent(name) + "=" + encodeURIComponent(value);
 	}
 
 	return url;

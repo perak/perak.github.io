@@ -76,11 +76,11 @@
 				<div id="local" style="display: none;">
 					<video id="localVideo" autoplay="autoplay" muted="true" style="width: 100%"></video>
 				</div>
-					<div id="remote" style="display: none; position: relative; align: left;">
-						<video id="remoteVideo" autoplay="autoplay" style="width: 100%"></video>
-							<div id="mini" style="display: none; width: 25%; bottom: 0; right: 0; position: absolute;">
-						<video id="miniVideo" autoplay="autoplay" muted="true" style="width: 100%"></video>
-					</div>
+                <div id="remote" style="display: none; position: relative; align: left;">
+                    <video id="remoteVideo" autoplay="autoplay" style="width: 100%"></video>
+                    <div id="mini" style="display: none; width: 25%; bottom: 0; right: 0; position: absolute;">
+                        <video id="miniVideo" autoplay="autoplay" muted="true" style="width: 100%"></video>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -187,14 +187,10 @@
 
     function onRemoteVideoStarted()
     {
-        var local_video_element = $("#localVideo");
-        var mini_video_element = $("#miniVideo");
-        var remote_video_element = $("#remoteVideo");
+        attachMediaStream($("#remoteVideo")[0], videoCall.remoteVideoStream);
+        attachMediaStream($("#miniVideo")[0], videoCall.localVideoStream);
 
-        attachMediaStream(remote_video_element[0], videoCall.remoteVideoStream);
-        attachMediaStream(mini_video_element[0], videoCall.localVideoStream);
-
-        local_video_element.attr("src", "");
+        $("#localVideo").attr("src", "");
 
         $("#local").hide();
         $("#remote").show();
@@ -211,14 +207,10 @@
         $("#remote").hide();
         $("#local").show();
 
-        var local_video_element = $("#localVideo");
-        var mini_video_element = $("#miniVideo");
-        var remote_video_element = $("#remoteVideo");
+        attachMediaStream($("#localVideo")[0], videoCall.localVideoStream);
 
-        attachMediaStream(local_video_element[0], videoCall.localVideoStream);
-
-        mini_video_element.attr("src", "");
-        remote_video_element.attr("src", "");
+        $("#miniVideo").attr("src", "");
+        $("#remoteVideo").attr("src", "");
 
         $("#hangupButton").hide();
         if(is_initiator)
@@ -249,14 +241,13 @@
     function onChannelOpened()
     {
         channel_receive_counter = 0;
-console.log("channel opened");
+        console.log("channel opened");
         initOrWait();
     }
 
     function closeChannel()
     {
-console.log("closing channel...");
-
+        console.log("closing channel...");
         channel.close(onChannelClosed());
     }
 
@@ -264,13 +255,12 @@ console.log("closing channel...");
     function onChannelClosed()
     {
         channel_receive_counter = 0;
-console.log("channel closed");
-//        window.location = "index.html";
+        console.log("channel closed");
     }
 
     function receiveMessages()
     {
-console.log("receiving... (" + channel_receive_counter + ")");
+        console.log("receiving... (" + channel_receive_counter + ")");
 
         channel_receive_counter++;
         channel.receive(onMessageReceived, onChannelError, onChannelTimeout);
@@ -279,7 +269,7 @@ console.log("receiving... (" + channel_receive_counter + ")");
     function onMessageReceived(message)
     {
         channel_receive_counter--;
-console.log("received: " + message);
+        console.log("received: " + message);
 
         videoCall.messageReceived(message);
         if(videoCall.isActive)
@@ -288,19 +278,19 @@ console.log("received: " + message);
 
     function onSendMessage(message)
     {
-console.log("sending: " + message);
+        console.log("sending: " + message);
         channel.send(message, onMessageSent, onChannelError);
     }
 
     function onMessageSent()
     {
-console.log("sent.");
-        //
+        console.log("sent.");
     }
 
     function onChannelError(message)
     {
-        showError("Signaling channel error.", "Error message: " + message);
+        if(videoCall.isActive)
+            showError("Signaling channel error.", "Error message: " + message);
     }
 
     function onChannelTimeout()
