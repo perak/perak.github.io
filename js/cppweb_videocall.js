@@ -171,17 +171,17 @@ VideoCall = function(options)
 
     function onSetRemoteDescriptionSuccess()
     {
-        //
+//console.log("onSetRemoteDescriptionSuccess");
     }
 
     function onSetRemoteDescriptionError(message)
     {
-        //
+console.log("onSetRemoteDescriptionError");
     }
 
     function onCreateOfferError(message)
     {
-        //
+console.log("onCreateOfferError");
     }
 
     function createAnswer()
@@ -191,7 +191,7 @@ VideoCall = function(options)
 
     function onCreateAnswerError(message)
     {
-        //
+console.log("onCreateAnswerError");
     }
 
     function setLocalAndSendMessage(description)
