@@ -1,8 +1,8 @@
-/**
-* Dynamic page loading.
-* Copyright 2013 Petar Korponaić
-* All rights reserved.
-*/
+/*!
+ * Copyright (c) 2013 Petar Korponaić
+ *
+ * All rights reserved
+ */
 
 function loadDynamic(content_address, dynamic_container)
 {

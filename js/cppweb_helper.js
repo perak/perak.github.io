@@ -1,8 +1,8 @@
-/**
-* Helper functions
-* Copyright 2013 Petar Korponaić
-* All rights reserved.
-*/
+/*!
+ * Copyright (c) 2013 Petar Korponaić
+ *
+ * All rights reserved
+ */
 
 (function() {
   if (!window.console) {

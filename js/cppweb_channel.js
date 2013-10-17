@@ -1,8 +1,8 @@
-/**
-* cppw_channel
-* Copyright 2013 Petar Korponaić
-* All rights reserved.
-*/
+/*!
+ * Copyright (c) 2013 Petar Korponaić
+ *
+ * All rights reserved
+ */
 
 function CommChannel(channel_address, is_master)
 {
