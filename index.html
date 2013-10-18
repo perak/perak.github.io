@@ -23,46 +23,12 @@
 
 	<div id="wrap">
 		<div class="container">
-			<div class="header">
-				<ul class="nav nav-pills pull-right">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="video.html">Wait for the call</a></li>
-					<li id="callLink"><a data-toggle="modal" href="#callDialog">Call a friend</a></li>
-				</ul>
-				<h3 class="text-muted">Instant video call</h3>
-			</div>
-
-			<div class="modal fade" id="callDialog">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h4 class="modal-title">Call a friend</h4>
-						</div>
-						<div class="modal-body">
-                            <div id="friendChannelError" style="display: none;" class="alert alert-danger"></div>
-							<h4>Friend's channel:</h4>
-							<input type="text" id="friendChannel" class="form-control">
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-							<button type="button" id="callButton" class="btn btn-primary">Call</button>
-						</div>
-					</div><!-- /.modal-content -->
-				</div><!-- /.modal-dialog -->
-			</div><!-- /.modal -->
-
-			<div class="jumbotron">
-				<h1>Instant video call</h1>
-				<p class="lead">No registration, no instalation, no plugins... just click to talk!</p>
-				<div class="btn-group"><a class="btn btn-lg btn-success" href="video.html">Wait for the call</a></div> &nbsp; or &nbsp; <div class="btn-group"><a class="btn btn-lg btn-success" data-toggle="modal" href="#callDialog">Call a friend</a></div>
-			</div>
+		<h3>This page is under construction</h3>
 		</div>
 	</div>
 
 	<div id="footer">
 		<div class="container">
-		<p class="text-muted credit">Copyright Petar Korponaić &copy; 2013.</p>
 		</div>
 	</div>
 
@@ -73,25 +39,6 @@
 
         <script src="js/main.js"></script>
 
-<script type="text/javascript">
-    $('#callDialog').on('shown.bs.modal', function () {
-        $('#friendChannel').focus();
-    })
-
-    $("#callButton").click(function() {
-        var friend_channel = $("#friendChannel").val();
-
-        if(friend_channel == "" || friend_channel.length != 9 || !friend_channel.match(/^[0-9]+$/))
-        {
-            $("#friendChannelError").text("You have entered an invalid channel number.");
-            $("#friendChannelError").show();
-            return;
-        }
-
-        $('#callDialog').modal('hide');
-        window.location = "video.html?channel=" + friend_channel;
-    });
-</script>
 
 <script type="text/javascript">
 
