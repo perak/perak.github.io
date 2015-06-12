@@ -28,7 +28,7 @@ Software developement acceleration and code generation. Less programming to huma
 
 #### Contact me
 
-[e-mail](mailto:petar.korponaic@gmail.com)
+**petar.korponaic@gmail.com**
 
 [GitHub](https://github.com/perak)
 
