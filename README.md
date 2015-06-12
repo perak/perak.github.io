@@ -13,12 +13,12 @@ Started [Meteor Kitchen](http://www.meteorkitchen.com) project in 2014. "Meteor 
 
 In this videos, other people talks about meteor kitchen:
 
-https://www.youtube.com/watch?v=7sVwJQYcgWk
-https://www.youtube.com/watch?v=9k5YRxjP58Y
-https://www.youtube.com/watch?v=0njX2e7GwDs
-https://www.youtube.com/watch?v=KANRgb1eTrg
-https://www.youtube.com/watch?v=RjDitvJudTc
-https://www.youtube.com/watch?list=PLJ1TVRVOrm2OryvkF8FU-wUHUs5xjP6Zn&v=lBXsTvy1ElQ
+- https://www.youtube.com/watch?v=7sVwJQYcgWk
+- https://www.youtube.com/watch?v=9k5YRxjP58Y
+- https://www.youtube.com/watch?v=0njX2e7GwDs
+- https://www.youtube.com/watch?v=KANRgb1eTrg
+- https://www.youtube.com/watch?v=RjDitvJudTc
+- https://www.youtube.com/watch?list=PLJ1TVRVOrm2OryvkF8FU-wUHUs5xjP6Zn&v=lBXsTvy1ElQ
 
 
 #### Personal Interests
