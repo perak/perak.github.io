@@ -9,7 +9,7 @@ With 25 years of experience in information technology, author and contributor in
 
 #### Meteor Kitchen
 
-Started [Meteor Kitchen](http://www.meteorkitchen.com) project in 2014. "Meteor Kitchen" is a code generator for Meteor.js that dramatically speeds up and simplifies development of web and mobile applications. A year later, together with growing number of users (developers), "Kitchen" is moving closer and closer to a great dream: **enable non-experts to build great, modern and reactive web & mobile applications** in minutes instead of hours. Or in hours instead of days.
+Started [Meteor Kitchen](http://www.meteorkitchen.com) project in 2014. "Meteor Kitchen" is a code generator for Meteor.js that dramatically speeds up and simplifies development of web and mobile applications. A year later, together with growing number of users (developers), "Kitchen" is moving closer to a great dream: **enable non-experts to build modern, reactive web & mobile applications** in minutes instead of hours. Or in hours instead of days.
 
 In this videos, other people talks about meteor kitchen:
 
@@ -23,7 +23,7 @@ In this videos, other people talks about meteor kitchen:
 
 #### Personal Interests
 
-Software developement acceleration and code generation. Less programming to humans - more to machines. Less coding == more code. Interested in neural network algorythms and implementations. Internet of things and embedded systems. automation systems and robotics. Passionate reader of science and science-fiction publications. Interested in history, presence and future of technology. Friendly and social. Family guy. Recreative sports - biking, walking... table tennis, anyone?
+Software developement acceleration and code generation. Less programming to humans - more to machines. Less coding == more code. Interested in neural network algorythms and implementations. Internet of things and embedded systems. Automation systems and robotics. Passionate reader of science and science-fiction publications. Interested in history, presence and future of technology. Friendly and social. Family guy. Recreative sports - biking, walking... table tennis, anyone?
 
 
 #### Contact me
@@ -33,4 +33,3 @@ Software developement acceleration and code generation. Less programming to huma
 [GitHub](https://github.com/perak)
 
 [Twitter](https://twitter.com/MeteorKitchen)
-
